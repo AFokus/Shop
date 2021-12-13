@@ -9,12 +9,13 @@ public class AnimatedElement
 
     private Transform _container;
     
-    private AnimatedElement(Component container)
+    private AnimatedElement(Transform container)
     {
         CollectItems(container);
+        _container = container;
     }
     
-    private void CollectItems(Component container)
+    private void CollectItems(Transform container)
     {
         var images = container.GetComponentsInChildren<Image>();
         

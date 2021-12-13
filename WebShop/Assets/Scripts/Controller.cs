@@ -1,16 +1,10 @@
 ﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
-
-namespace DefaultNamespace
-{
-    public class Controller
+    public class Controller : MonoBehaviour
     {
-        private Text _text;
-        private Image _image;
-
         private void Init()
-        {
+        {  
             
         }
     }
-}
