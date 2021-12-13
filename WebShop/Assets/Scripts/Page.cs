@@ -1,7 +1,4 @@
-﻿namespace DefaultNamespace
+﻿public class Page : View
 {
-    public class Page : View
-    {
-        
-    }
+    
 }

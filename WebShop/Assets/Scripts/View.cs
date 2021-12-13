@@ -7,12 +7,12 @@ public class View : MonoBehaviour
         
     }
 
-    public virtual void OnOpen()
+    public virtual void Open()
     {
         
     }
     
-    public virtual void OnClose()
+    public virtual void Close()
     {
         
     }
