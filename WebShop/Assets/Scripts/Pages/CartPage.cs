@@ -12,5 +12,6 @@ public class CartPage : View
     {
         base.OnCreate();
         _back.onClick.AddListener(() => Controller.OpenWindow<CartPage, MainPage>());
+        _checkOut.onClick.AddListener(() => Controller.OpenWindow<CartPage, OrderPage>());
     }
 }

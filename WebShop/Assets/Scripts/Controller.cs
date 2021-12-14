@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
         DontDestroyOnLoad(this);
         Init();
     }
-
+        
     private void Init()
     {  
         _manager.Open<MainPage>();
