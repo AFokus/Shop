@@ -8,11 +8,14 @@ public class AnimatedElement
     private readonly List<MaskableGraphic> _items = new List<MaskableGraphic>();
 
     private Transform _container;
+
+    private Vector3 _origScale;
     
-    private AnimatedElement(Transform container)
+    public AnimatedElement(Transform container)
     {
         CollectItems(container);
         _container = container;
+        _origScale = container.localScale;
     }
     
     private void CollectItems(Transform container)
@@ -28,9 +31,9 @@ public class AnimatedElement
             _items.Add(text);
     }
 
-    public Sequence Enable(bool value, float duration, Ease ease)
+    public Sequence Enable(bool value, float duration, Ease ease = Ease.InOutSine)
     {
-        var scale = value ? Vector3.one : Vector3.zero;
+        var scale = value ? _origScale : Vector3.zero;
         var fade = value ? 1f : 0f;
 
         var sequence = DOTween.Sequence()

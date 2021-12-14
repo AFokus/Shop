@@ -35,7 +35,7 @@ public partial class Manager : MonoBehaviour
         view.Open();
     }
 
-    public void CLose<T>() where T : View
+    public void Close<T>() where T : View
     {
         var view = _views[typeof(T)];
         view.Close();
