@@ -1,5 +1,3 @@
-// Copyright (c) 2012-2021 FuryLion Group. All Rights Reserved.
-
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,7 +8,7 @@ public class TiltWindow : MonoBehaviour
     private Transform _mTrans;
     private Quaternion _mStart;
     private Vector2 _mRot = Vector2.zero;
-
+    
     private readonly float _halfWidth = Screen.width * 0.5f;
     private readonly float _halfHeight = Screen.height * 0.5f;
 
