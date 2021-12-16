@@ -6,6 +6,8 @@ public class Controller : MonoBehaviour
 {
     private static Manager _manager;
 
+    public static User_Data CurrentUser;
+
     private void Start()
     {
         _manager = FindObjectOfType<Manager>();
@@ -18,10 +20,10 @@ public class Controller : MonoBehaviour
         _manager.Open<MainPage>();
     }
 
-    public static void OpenWindow<T, V>(Action activity = null) where T : View where V : View
+    public static V OpenWindow<T, V>(Action activity = null) where T : View where V : View
     {
         _manager.Close<T>();
         activity?.Invoke();
-        _manager.Open<V>();
+        return _manager.Open<V>();
     }
 }

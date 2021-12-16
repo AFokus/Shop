@@ -29,10 +29,11 @@ public partial class Manager : MonoBehaviour
         }
     }
     
-    public void Open<T>() where T : View
+    public T Open<T>() where T : View
     {
         var view = _views[typeof(T)];
         view.Open();
+        return (T)view;
     }
 
     public void Close<T>() where T : View

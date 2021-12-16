@@ -241,11 +241,121 @@ private static string connectionString = "Data Source=" + Application.dataPath +
         return SetData(sql);
     }
 
+    public static bool SetNewGraphics(GraphicsTable newO)
+    {
+        string sql = $"INSERT INTO Graphics (Name, Volume, Interface, Frequency)" +
+            $" VALUES ('{newO.Name}', '{newO.Volume}','{newO.Interface}','{newO.Frequency}')";
+        return SetData(sql);
+    }
+
+    public static bool UpdateGraphics(GraphicsTable newO)
+    {
+        string sql = $"UPDATE Graphics SET Name = '{newO.Name}', Volume='{newO.Volume}', Interface='{newO.Interface}'," +
+            $" Frequency='{newO.Frequency}'" +
+            $"WHERE GraphicId='{newO.GraphicId}'";
+        return SetData(sql);
+    }
+
+    public static bool SetNewRAM(RAM newO)
+    {
+        string sql = $"INSERT INTO RAM (Type, Frequency, Volume, \"Free Slots\")" +
+            $" VALUES ('{newO.Type}', '{newO.Frequency}','{newO.Volume}','{newO.FreeSlots}')";
+        return SetData(sql);
+    }
+
+    public static bool UpdateRAM(RAM newO)
+    {
+        string sql = $"UPDATE RAM SET Type = '{newO.Type}', Frequency='{newO.Frequency}', Volume='{newO.Volume}'," +
+            $" \"Free Slots\"='{newO.FreeSlots}'" +
+            $"WHERE RAMID='{newO.RAMID}'";
+        return SetData(sql);
+    }
+
+    public static bool SetNewStorageTypes(StorageTypes newO)
+    {
+        string sql = $"INSERT INTO StorageTypes (Type)" +
+            $" VALUES ('{newO.Type}')";
+        return SetData(sql);
+    }
+
+    public static bool UpdateStorageTypes(StorageTypes newO)
+    {
+        string sql = $"UPDATE StorageTypes SET Type = '{newO.Type}' WHERE STID='{newO.STID}'";
+        return SetData(sql);
+    }
+
+    public static bool SetNewUser(User_Data newO)
+    {
+        string sql = $"INSERT INTO \"User Data\" (Login, Password, \"Access Level\", \"CartLineID\")" +
+            $" VALUES ('{newO.Login}','{newO.Password}','{newO.Access_Level}','{newO.CartLineID}')";
+        return SetData(sql);
+    }
+
     //----------------------------------------------------------------------------------------------------------------
 
     //----------------------------------------------------------------------------------------------------------------
     //                                         Запрос на удаление
     //----------------------------------------------------------------------------------------------------------------
+
+    public static bool DeleteModel(int Id)
+    {
+        string sql = $"DELETE FROM Model WHERE ModelId LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteCategories(int Id)
+    {
+        string sql = $"DELETE FROM Categories WHERE CategoriesId LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteDesign(int Id)
+    {
+        string sql = $"DELETE FROM Design WHERE DesignID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteGraphics(int Id)
+    {
+        string sql = $"DELETE FROM Graphics WHERE GraphicID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteOrders(int Id)
+    {
+        string sql = $"DELETE FROM Orders WHERE OrderID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteProcessors(int Id)
+    {
+        string sql = $"DELETE FROM Processors WHERE ProcID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteRAM(int Id)
+    {
+        string sql = $"DELETE FROM RAM WHERE ModelId RAMID {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteScreen(int Id)
+    {
+        string sql = $"DELETE FROM Screen WHERE ScreenID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteStorage(int Id)
+    {
+        string sql = $"DELETE FROM Storage WHERE StorageID LIKE {Id}";
+        return SetData(sql);
+    }
+
+    public static bool DeleteStorageTypes(int Id)
+    {
+        string sql = $"DELETE FROM StorageTypes WHERE STID LIKE {Id}";
+        return SetData(sql);
+    }
 
     //----------------------------------------------------------------------------------------------------------------
 

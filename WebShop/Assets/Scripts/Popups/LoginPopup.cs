@@ -37,6 +37,8 @@ public class LoginPopup : View
                     Controller.OpenWindow<LoginPopup, MainPage>();
                 else
                     Controller.OpenWindow<LoginPopup, Administration>();
+
+                Controller.CurrentUser = user; 
             }
             else
                 Debug.Log("Login Error");
