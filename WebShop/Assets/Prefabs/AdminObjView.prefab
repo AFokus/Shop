@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 4357627995824197503}
   - component: {fileID: 4357627995824197501}
   - component: {fileID: 4357627995824197502}
+  - component: {fileID: 8950206073626227789}
   m_Layer: 5
   m_Name: AdminObjView
   m_TagString: Untagged
@@ -362,6 +363,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8950206073626227789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4357627995824197496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7ab37f6dc890e4e99020bb257f334d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  name: {fileID: 299592563725315143}
+  edit: {fileID: 8812459952124548246}
+  delete: {fileID: 299592562326206762}
 --- !u!1 &5977304534446467718
 GameObject:
   m_ObjectHideFlags: 0
